@@ -25,3 +25,24 @@
         })
  }) 
 </script>
+
+
+
+//kode kedua bisa pilih salah satu saja atas / bawah
+$(document).ready(function() {
+    tbl_store = $('#tbl_store').DataTable({ 
+        "processing": true, 
+        "serverSide": true, 
+        "order": [], 
+        "ajax": {
+            "url": "<?php echo site_url('master/store/store_controller/Data/')?>",
+            "type": "POST"
+        },
+        "columnDefs": [
+        { 
+            "targets": [ 0,5 ], 
+            "orderable": false, 
+        }
+        ],
+    });
+});
